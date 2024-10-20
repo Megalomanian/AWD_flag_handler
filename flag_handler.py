@@ -1,5 +1,9 @@
 import socket  
-  
+import request
+def submit_flag(flag):
+    url2 = 'http://10.233.*.*:801/flag_file.php?token=team3&flag=%s' %flag
+    submit = request.get(url2).text
+    print(submit)
 def start_server(host, port):  
     # 创建一个TCP/IP套接字  
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:  
@@ -20,8 +24,14 @@ def start_server(host, port):
                     if not data:  
                         break  # 连接关闭  
                     # 打印接收到的数据  
-                    print(f"Received: {data.decode()}")  
-  
+                    print(f"Received: {data.decode()}") 
+                    flag = str(data.decode())
+                    try:
+                        submit_flag(flag)
+                        print("flag submitted successfully")
+                    except:
+                        print("fail to submit flag")
+
 if __name__ == "__main__":  
     HOST = '127.0.0.1'  # 监听的主机地址  
     PORT = 12346       # 监听的端口号  
