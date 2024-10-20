@@ -24,4 +24,4 @@ python3 flag_capture.py 111.111.111.111 2222
 ```
 接下来，在根目录下，你会得到一个名为时间戳的文件
 将此文件上传至已取得shell权限的靶机，而后运行，即可在flag_handler.py的shell中自动获取flag
-注：当前版本还不能全自动提交flag，等我下次打AWD的时候去抓个包看看怎么改request
+现在可以以get方式来自动化提交flag了，但是在flag_handler.py文件里边要改一下url
